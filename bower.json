@@ -1,0 +1,25 @@
+{
+  "name": "Fluent Canvas",
+  "version": "0.1.0",
+  "authors": [
+    "Norman Rzepka <norman@scm.io>"
+  ],
+  "description": "Chainable syntax for HTML5 Canvas. For readable barebone Canvas drawing.",
+  "main": "fluent-canvas.js",
+  "keywords": [
+    "canvas",
+    "chainable"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/scalableminds/fluent-canvas",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1"
+  }
+}
