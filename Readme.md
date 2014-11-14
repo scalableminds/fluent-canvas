@@ -14,13 +14,13 @@ context
   .beginPath()
   .moveTo(radius, radius)
   .lineTo(
-    radius * Math.cos(startAngle) + radius, 
+    radius * Math.cos(startAngle) + radius,
     radius * Math.sin(startAngle) + radius
   )
   .arc(radius, radius, radius, startAngle, endAngle)
   .closePath()
-  .tap(function (fluentCanvas) { 
-    var gradientStyle = 
+  .tap(function (fluentCanvas) {
+    var gradientStyle =
       context.createLinearGradient(0, 0, 0, 2 * radius);
     gradientStyle.addColorStop(0, "rgb(0, 0, 0)");
     gradientStyle.addColorStop(1, "rgb(255, 255, 255)");
@@ -30,7 +30,7 @@ context
 ```
 
 ## How it works
-All methods and properties of the context are wrapped in a function that returns a chain object. All original arguments are passed through. For properties the first argument will be set. 
+All methods and properties of the context are wrapped in a function that returns a chain object. All original arguments are passed through. For properties the first argument will be set.
 
 For some methods, like `createImageData` or `createLinearGradient`, you actually care about the original return value. So they won't return the chain object, but pass through their actual return values.
 
@@ -42,6 +42,10 @@ The constructor accepts either a `CanvasRenderingContext2D` or a `HTMLCanvasElem
 ### tap(callback)
 
 Tap into the chain and run a callback. The callback get two arguments `(fluentCanvas, context)` where `fluentCanvas` is the current chain and `context` is the raw `CanvasRenderingContext2D`. The callback doesn't need to return anything. The tap function returns the current chain.
+
+### clearAll()
+
+Deletes everything on the canvas. Works even if the canvas is transformed.
 
 ### context
 Access to the raw `CanvasRenderingContext2D`.
