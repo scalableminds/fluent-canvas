@@ -50,6 +50,9 @@ Deletes everything on the canvas. Works even if the canvas is transformed.
 ### context
 Access to the raw `CanvasRenderingContext2D`.
 
+### canvas
+Access to the canvas object.
+
 ## Authors
 [Norman Rzepka](http://github.com/normanrz), [scalable minds](http://scm.io/)
 
