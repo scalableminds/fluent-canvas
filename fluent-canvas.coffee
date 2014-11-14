@@ -19,6 +19,8 @@
         context = context.getContext("2d");
       }
 
+      canvas = context.canvas;
+
       return {
 
         <% setters.forEach(function (a) { %>
@@ -40,13 +42,24 @@
           return context.<%= a %>.apply(context, arguments);
         },
         <% }) %>
-        
+
         tap : function (callback) {
           callback(this, context);
           return this;
         },
 
-        context : context
+        clearAll: function () {
+          this
+            .save()
+            .setTransform(1, 0, 0, 1, 0, 0)
+            .clearRect(0, 0, canvas.width, canvas.height)
+            .restore();
+
+          return this;
+        },
+
+        context : context,
+        canvas : canvas
 
       };
 
